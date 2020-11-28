@@ -5,47 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Summit College - Chatbox</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background: #00000036;
-        }
-
-        .chatbox {
-            position: fixed;
-            display: block;
-            width: 25%;
-            height: 70%;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            bottom: 10%;
-            right: 2.5%;
-            background: #ddd;
-            border-radius: 5%;
-        }
-
-        .btn-chatbot {
-            position: fixed;
-            display:block;
-            bottom: 2%;
-            right: 2.5%;
-            border: none;
-            outline: none;
-            background: url(../img/message.png);
-            background-size: 50px 50px;
-            height: 50px;  
-            width: 50px;    
-            cursor: pointer;
-            border-radius: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <div class="chatbox"></div>
-    <button class="btn-chatbot"></button>
+    <div class="header">
+        <a href="#default" class="logo"><img src="img/logo.png" alt="New Summit College" class="logo-img"></a>
+        <h2>NEW SUMMIT COLLEGE</h2>
+        <div class="header-right">
+          <a class="active" href="#home">HOME</a>
+          <a href="#contact">ABOUT US</a>
+          <a href="#academics">ACADEMICS</a>
+          <a href="#features">FEATURES & FACILITES</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#search"></a>
+        </div>
+      </div>
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-head">
+                Chat Box
+                <button class="chatbox-size" id="close">⨉</button>
+        </div>
+        <div class="chatbox-foot">
+                <input type="text" name="msg" id="msg" placeholder="Send a message..." autocomplete="off">
+                <button id="btn">Send</button>
+        </div>
+    </div>
+    <button class="btn-chatbot" id="open"></button>
+    <script>
+        var x = document.getElementById('chatbox');
+        var y = document.getElementById('open');
+        var z = document.getElementById('close');
+
+        z.onclick = function () {
+            if(x.style.display = "block"){
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        y.onclick = function () {
+            x.style.display = "block";
+        }
+    </script>
 </body>
 </html>
